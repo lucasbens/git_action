@@ -9,7 +9,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - script: echo ${{ matrix.python }}
     - name: Set up Python 3.10.9
       uses: actions/setup-python@v4
       with:
@@ -23,4 +22,9 @@ jobs:
     - name: Test
       run: |
         make test
+  
+    - name: Yml output var
+      run:  |
+        echo ${{ matrix.python }}
+
     
