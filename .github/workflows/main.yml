@@ -9,10 +9,11 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
+    - script: echo ${{ matrix.python }}
     - name: Set up Python 3.10.9
       uses: actions/setup-python@v4
       with:
-        python-version: "3.8", "3.9", "3.10"
+        python-version: ${{ matrix.python }}
     - name: Install dependencies
       run: |
         make install
